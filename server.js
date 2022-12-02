@@ -40,4 +40,14 @@ app.get('/' ,async (req , res) => {
 app.use(express.json());
 app.use(cookieParser());
 app.use('/api' ,routes );
+
+
+if(process.env.NODE_ENV == 'production'){
+    const path = require('path')
+     app.get('/' ,(req ,res)=>{
+        res.use(express.static(path.resolve(__dirname , 'Client' , 'build')))
+
+        res.sendFile(path.resolve(__dirname , 'Client' , 'build' ,'index.html'))
+     })
+}
 app.listen( port ,  () => console.log(`app is runnning on port ${port}`))
