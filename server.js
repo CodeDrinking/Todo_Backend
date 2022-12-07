@@ -1,7 +1,7 @@
 const express = require("express")
 const routes = require('./routes/index')
 const app = express();
-const PORT = process.env.PORT  ;
+const PORT = process.env.PORT || 8000;
 const cors=require("cors");
 cookieParser = require('cookie-parser');
 const db= require('./config/mongoose')
