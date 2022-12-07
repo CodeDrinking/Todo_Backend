@@ -2,7 +2,7 @@
 const  mongoose = require('mongoose');
 const {MONGO_URI} = require("../ConfigKeys/keys")
 
-mongoose.connect(MONGO_URI);
+mongoose.connect("mongodb+srv://roshan_123:Roshan1102@cluster0.ugpv4zv.mongodb.net/TodoTest");
 
 
 
