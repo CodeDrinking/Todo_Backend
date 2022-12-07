@@ -9,12 +9,12 @@ const redisClient=require("../api/redisConnect");
 
 
 
-
-app.use(cors({
-    origin: ['http://localhost:3000'],
-    method : ["get" , "get"],
-    credentials:true
-}))
+app.use(cors());
+// app.use(cors({
+//     origin: ['http://localhost:3000'],
+//     method : ["get" , "get"],
+//     credentials:true
+// }))
 
 app.get('/' ,async (req , res) => {
     let keyName = 'keyName';
@@ -42,12 +42,12 @@ app.use(cookieParser());
 app.use('/api' ,routes );
 
 
-if(process.env.NODE_ENV == 'production'){
-    const path = require('path')
-     app.get('/' ,(req ,res)=>{
-        res.use(express.static(path.resolve(__dirname , 'Client' , 'build')))
+// if(process.env.NODE_ENV == 'production'){
+//     const path = require('path')
+//      app.get('/' ,(req ,res)=>{
+//         res.use(express.static(path.resolve(__dirname , 'Client' , 'build')))
 
-        res.sendFile(path.resolve(__dirname , 'Client' , 'build' ,'index.html'))
-     })
-}
+//         res.sendFile(path.resolve(__dirname , 'Client' , 'build' ,'index.html'))
+//      })
+// }
 app.listen( port ,  () => console.log(`app is runnning on port ${port}`))
