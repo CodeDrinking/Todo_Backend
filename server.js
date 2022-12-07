@@ -1,7 +1,7 @@
 const express = require("express")
 const routes = require('./routes/index')
 const app = express();
-const port =8000;
+const PORT = process.env.PORT  ;
 const cors=require("cors");
 cookieParser = require('cookie-parser');
 const db= require('./config/mongoose')
@@ -50,4 +50,4 @@ app.use('/api' ,routes );
 //         res.sendFile(path.resolve(__dirname , 'Client' , 'build' ,'index.html'))
 //      })
 // }
-app.listen( port ,  () => console.log(`app is runnning on port ${port}`))
+app.listen( PORT ,  () => console.log(`app is runnning on port ${PORT}`))
