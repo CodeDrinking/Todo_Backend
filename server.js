@@ -5,7 +5,7 @@ const PORT = 8000;
 const cors=require("cors");
 cookieParser = require('cookie-parser');
 const db= require('./config/mongoose')
-const redisClient=require("../api/redisConnect");
+const redisClient=require(("./redisConnect");
 
 
 
