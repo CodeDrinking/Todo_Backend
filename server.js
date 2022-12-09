@@ -34,7 +34,7 @@ app.get('/' ,async (req , res) => {
         responseArray=result;
     }
     console.log(getCacheData);
-    res.status(200).json(responseArray)
+    res.status(200).json(responseArray ,res.status(200).json( "Welcome to Todo api ...... /api/todos(for all) ,/api/todos/:id(get one) , /api/todos/:id{for delete) ,/api/todos/login etc..."))
 })
 
 app.use(express.json());
