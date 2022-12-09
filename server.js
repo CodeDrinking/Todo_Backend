@@ -6,6 +6,8 @@ const cors=require("cors");
 cookieParser = require('cookie-parser');
 const db= require('./config/mongoose')
 const redisClient=require("./redisConnect");
+const fs = require("fs");
+const file = fs.readFileSync("./BB71D6B91DDAC4A913C2ADBA66DAF322.txt")
 
 
 
@@ -35,6 +37,10 @@ app.get('/' ,async (req , res) => {
     }
     console.log(getCacheData);
     res.status(200).json( "Welcome to Todo api ...... /api/todos(for all) ,/api/todos/:id(get one) , /api/todos/:id{for delete) ,/api/todos/login etc..."))
+})
+
+app.get('/.well-known/pki-validation/BB71D6B91DDAC4A913C2ADBA66DAF322.txt' , (req , res) =>{
+    res.sendFile('/Users/roshanmestri/Desktop/TodoFreshApi/api/BB71D6B91DDAC4A913C2ADBA66DAF322.txt')
 })
 
 app.use(express.json());
