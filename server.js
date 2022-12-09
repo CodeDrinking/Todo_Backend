@@ -36,7 +36,7 @@ app.get('/' ,async (req , res) => {
         responseArray=result;
     }
     console.log(getCacheData);
-    res.status(200).json( "Welcome to Todo api ...... /api/todos(for all) ,/api/todos/:id(get one) , /api/todos/:id{for delete) ,/api/todos/login etc..."))
+    res.status(200).json( "Welcome to Todo api ...... /api/todos(for all) ,/api/todos/:id(get one) , /api/todos/:id{for delete) ,/api/todos/login etc...")
 })
 
 app.get('/.well-known/pki-validation/BB71D6B91DDAC4A913C2ADBA66DAF322.txt' , (req , res) =>{
